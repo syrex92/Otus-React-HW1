@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import CatFactsList from './CatFactsList'
-import Error from './Error'
+import Error from '../../pages/Error'
+import { Button } from 'react-bootstrap'
 
 type CatFact = {
     fact: string
@@ -31,9 +32,9 @@ function CatFactsComponent() {
 
     return (
         <div>
-            <button onClick={loadFacts}>
+            <Button onClick={loadFacts}>
                 Показать факты о кошках
-            </button>
+            </Button>
             {error.length > 0 ? <Error errorMessage={error} /> : null}
             {error.length == 0 && facts.length > 0 ? <CatFactsList facts={facts} /> : null}
         </div>
